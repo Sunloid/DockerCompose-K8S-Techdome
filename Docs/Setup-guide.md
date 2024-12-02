@@ -353,12 +353,6 @@ Frontend: http://<PUBLIC_IP>:3000
 
 Backend: http://<PUBLIC_IP>:5000
 
-<>
+![Alt text](<image (35).png>)
 
-<>
-
-<>
-
-<>
-
-<>
+![Alt text](<image (36).png>)
