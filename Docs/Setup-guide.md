@@ -108,7 +108,7 @@ Next build the frontend image
 ```
 docker build -t frontend . 
 ```
-
+![Alt text](<image (29).png>)
 
 
 ## Backend Image and Directory 
@@ -145,7 +145,7 @@ Then build the backend image
 ```
 docker build -t backend . 
 ```
-<>
+![Alt text](<image (30).png>)
 
 ## Docker-compose file 
 GO to the directory where frontend and backend are present and create a docker-compose.yml file and copy paste this code. 
