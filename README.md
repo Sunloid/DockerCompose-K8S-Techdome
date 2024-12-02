@@ -9,7 +9,7 @@ The project leverages Docker Compose for managing multiple services locally and 
 
 ## Project Structure
 ```
-my-project/
+DockerCompose-K8S-Techdome/
 │
 ├── frontend/                         # Frontend code (React, Vue, etc.)
 │   ├── Dockerfile                    # Dockerfile to build the frontend container
