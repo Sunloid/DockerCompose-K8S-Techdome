@@ -5,7 +5,7 @@ This file contains all the information needed for setting up the project.
 The main problem I ran into while developing this project was the disk space. Docker files  which include images, containers, volumes, build data and cache require a large amount of space. There are two ways of dealing with this one using a instance type which features a huge amount of space (t2.large) or using a small instance (t2.micro) and installing a EBS volume on the same. 
 
 The easier method would be to use a instance which huge amount of memory like t2.large . For security enable all traffic and use ubuntu linux. 
- ![Alt text](<image (26).png>)
+ ![Alt text](<z ( (26).png>)
 
 
 ## Downloads in the Instance
@@ -102,13 +102,13 @@ Then the frontend directory should start looking something like the frontend fol
 
 Edit the api.js file in the apiConfig of the src folder and use the public ip of the instance. 
 
-![Alt text](<image (28).png>)
+![Alt text](<z (28).png>)
 
 Next build the frontend image 
 ```
 docker build -t frontend . 
 ```
-![Alt text](<image (29).png>)
+![Alt text](<z (29).png>)
 
 
 ## Backend Image and Directory 
@@ -145,7 +145,7 @@ Then build the backend image
 ```
 docker build -t backend . 
 ```
-![Alt text](<image (30).png>)
+![Alt text](<z (30).png>)
 
 ## Docker-compose file 
 GO to the directory where frontend and backend are present and create a docker-compose.yml file and copy paste this code. 
@@ -185,15 +185,15 @@ To check if the images and code are running porperly or not we will deploy them 
 docker-compose up -d
 ```
 
-![Alt text](<image (31).png>)
+![Alt text](<z (31).png>)
 
 Use the pubic IP address and the ports 3000 and 5000 to check if the frontend and backend are working or not. If they are then you would have a website like this 
 
-![Alt text](<image (32).png>)
+![Alt text](<z (32).png>)
 
-![Alt text](<image (33).png>)
+![Alt text](<z (33).png>)
 
-![Alt text](<image (34).png>)
+![Alt text](<z (34).png>)
 
 Check if the api calls are working or not in the network tab in the user-data section.
 
@@ -353,6 +353,6 @@ Frontend: http://<PUBLIC_IP>:3000
 
 Backend: http://<PUBLIC_IP>:5000
 
-![Alt text](<image (35).png>)
+![Alt text](<z (35).png>)
 
-![Alt text](<image (36).png>)
+![Alt text](<z (36).png>)
