@@ -13,31 +13,29 @@ my-project/
 │
 ├── frontend/                         # Frontend code (React, Vue, etc.)
 │   ├── Dockerfile                    # Dockerfile to build the frontend container
-│   ├── .env                          # Environment variables specific to frontend
 │   ├── public/                       # Static files like images, icons
-│   ├── src/                          # React/Vue source files
-│   ├── package.json                  # Frontend dependencies and scripts
-│   └── README.md                     # Information about the frontend
+│   ├── src/                          # React source files
+│   └── package.json                  # Frontend dependencies and scripts
 │
 ├── backend/                          # Backend code (Node.js, Express, etc.)
 │   ├── Dockerfile                    # Dockerfile to build the backend container
+│   ├── Controller                    # Used to control and link the actions of blog and user 
+│   ├── Database                      # Setup of the mongoDB database
+│   ├── Models                        # Models of blog and user for the database
+│   ├── Routes                        # Used for routing specific things to database
+│   ├── server.js                     # Defining the api and cloudinary
 │   ├── .env                          # Environment variables specific to backend
-│   ├── src/                          # Backend source code
-│   ├── package.json                  # Backend dependencies and scripts
-│   └── README.md                     # Information about the backend
-│
-├── database/                         # Database (MongoDB) related configurations
-│   └── Dockerfile                    # Dockerfile to run MongoDB if you want custom setup
+│   └── package.json                  # Backend dependencies and scripts
 │
 ├── kubernetes/                       # Kubernetes deployment and service files
 │   ├── frontend-deployment.yaml      # Deployment file for the frontend
-│   ├── frontend-service.yaml         # Service file for the frontend
 │   ├── backend-deployment.yaml       # Deployment file for the backend
-│   ├── backend-service.yaml          # Service file for the backend
-│   ├── mongo-deployment.yaml         # Deployment file for the MongoDB
-│   └── mongo-service.yaml            # Service file for the MongoDB
+│   └── databaseongo-deployment.yaml  # Deployment file for the MongoDB
+│
+├── Docs/                             # Project specific documents  
+│   ├── Error-log.md                  # Contains all the Errors and Challenges I faced in this project
+│   └── Setup-guide.md                # Complete step by step for the setup of this project
 │
 ├── docker-compose.yml                # Docker Compose configuration for local setup
-├── .gitignore                        # Files and directories to ignore in Git
 └── README.md                         # Project overview and setup instructions
 ```
