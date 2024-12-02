@@ -20,9 +20,14 @@ git is being installed to pull frontend and backend projects from the repositori
 
 Terraform installation and cluster formation: 
 ```
-
+apt install -y apt-transport-https ca-certificates curl gpg
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.31/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.31/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+apt update -y 
+apt install -y kubelet kubeadm kubectl
+kubeadm init 
 ```
-
+You can create more instances and add more nodes into the cluster but that is optional. 
 
 ## Infrastructure Setup 
 ```
