@@ -143,4 +143,56 @@ Then build the backend image
 ```
 docker build -t backend . 
 ```
+<>
+
+## Docker-compose file 
+GO to the directory where frontend and backend are present and create a docker-compose.yml file and copy paste this code. 
+```
+version: '3.8'
+
+services:
+  frontend:
+    image: frontend
+    container_name: Frontend
+    ports:
+      - 3000:80
+    depends_on:
+      - backend
+
+  backend:
+    image: backend
+    container_name: Backend
+    environment:
+      - DB=mongodb://database:27017/mydatabase4
+    ports:
+      - 5000:5000
+    depends_on:
+      - database
+
+  database:
+    image: mongo
+    container_name: Database
+    ports:
+      - 27017:27017
+```
+
+Change the value of DB with the name of the database you see fit. 
+
+To check if the images and code are running porperly or not we will deploy them on docker-compose and for that use this code. 
+```
+docker-compose up -d
+```
+<>
+
+Use the pubic IP address and the ports 3000 and 5000 to check if the frontend and backend are working or not. If they are then you would have a website like this 
+<>
+<>
+<>
+
+Check if the api calls are working or not in the network tab in the user-data section.
+
+After that is done remove docker compose 
+```
+docker-compose down 
+```
 
