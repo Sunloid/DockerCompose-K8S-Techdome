@@ -29,11 +29,15 @@ DockerCompose-K8S-Techdome/
 │
 ├── kubernetes/                       # Kubernetes deployment and service files
 │   ├── frontend-deployment.yaml      # Deployment file for the frontend
+│   ├── frontend-service.yaml         # Service file for the frontend
 │   ├── backend-deployment.yaml       # Deployment file for the backend
-│   └── databaseongo-deployment.yaml  # Deployment file for the MongoDB
+│   ├── backend-service.yaml          # Service file for the backend
+│   ├── mongo-deployment.yaml         # Deployment file for the MongoDB
+│   └── mongo-service.yaml            # Service file for the MongoDB
 │
 ├── Docs/                             # Project specific documents  
 │   ├── Error-log.md                  # Contains all the Errors and Challenges I faced in this project
+│   ├── Deployment-strategy.md        # My Deployment Strategy
 │   └── Setup-guide.md                # Complete step by step for the setup of this project
 │
 ├── docker-compose.yml                # Docker Compose configuration for local setup
