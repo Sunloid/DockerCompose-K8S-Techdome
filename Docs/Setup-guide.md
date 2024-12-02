@@ -184,12 +184,16 @@ To check if the images and code are running porperly or not we will deploy them 
 ```
 docker-compose up -d
 ```
-<>
+
+![Alt text](<image (31).png>)
 
 Use the pubic IP address and the ports 3000 and 5000 to check if the frontend and backend are working or not. If they are then you would have a website like this 
-<>
-<>
-<>
+
+![Alt text](<image (32).png>)
+
+![Alt text](<image (33).png>)
+
+![Alt text](<image (34).png>)
 
 Check if the api calls are working or not in the network tab in the user-data section.
 
