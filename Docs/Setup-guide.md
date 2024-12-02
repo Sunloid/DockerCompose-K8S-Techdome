@@ -27,6 +27,7 @@ apt update -y
 apt install -y kubelet kubeadm kubectl
 kubeadm init 
 ```
+Make sure to run these commands one by one. 
 You can create more instances and add more nodes into the cluster but that is optional. 
 
 ## Infrastructure Setup 
@@ -57,4 +58,9 @@ Docker-k8s/
 └── docker-compose.yaml (optional, for local development)
 ```
 
-The project infrastructure would exactly be like this one. Make 3 directories in the project directory and name them frontend, backend and k8s. In frontend 
+The project infrastructure would exactly be like this one. Make 3 directories in the project directory and name them frontend, backend and k8s. In the  frontend directory run this command 
+```
+git clone https://github.com/Sunloid/Techdome-frontend-fork
+```
+
+This will clone the frontend repository which I posted. 
