@@ -196,3 +196,75 @@ After that is done remove docker compose
 docker-compose down 
 ```
 
+## Kubernetes Setup 
+Go to the same directory where the frontend, backend and docker-compose are and create another directory called k8s. 
+
+Make 3 more files with the names: 
+- backend-Deployment.yml 
+- frontend-Deployment.yml 
+- database-Deployment.yml 
+
+and copy paste the following codes in all of them 
+
+frontend-Deployment.yml: 
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontendcontainer
+          image: frontend
+          ports:
+            - containerPort: 3000
+```
+
+backend-Deployment.yml: 
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backendcontainer
+          image: backend
+          ports:
+            - containerPort: 5000
+          env:
+            - name: DB
+              value: "mongodb://database:27017/mydatabase"
+```
+
+database-Deployment.yml:
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongo-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: mongo
+    spec:
+      containers:
+        - name: mongo
+          image: mongo
+          ports:
+            - containerPort: 27017
+```
