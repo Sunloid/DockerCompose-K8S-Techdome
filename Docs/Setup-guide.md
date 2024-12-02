@@ -100,13 +100,47 @@ CMD ["nginx", "-g", "daemon off;"]
 ```
 Then the frontend directory should start looking something like the frontend folder from this repo 
 
+Edit the api.js file in the apiConfig of the src folder and use the public ip of the instance. 
+
 Next build the frontend image 
 ```
 docker build -t frontend . 
 ```
-
 <>
 
 
+## Backend Image and Directory 
+Make a backend directory in the same place you made frontend and use this 
+```
+git clone https://github.com/Sunloid/Techdome-backend-fork
+```
 
+Remove useless files like the readme and package-lock.json and create a dockerfile and copy paste this. 
+```
+# Use official Node.js image
+FROM node:16 AS build
+WORKDIR /app
+
+# Copy package.json and package-lock.json (if available)
+COPY package.json ./
+
+# Install dependencies inside the container
+RUN npm install
+
+# Copy the rest of the backend files (controllers, routes, server.js, etc.)
+COPY . .
+
+# Expose the port your backend is running on (default is 5000)
+EXPOSE 5000
+
+# Start the backend server
+CMD ["npm", "start"]
+```
+
+GO the .env file and fill in the necessary information present there. 
+
+Then build the backend image 
+```
+docker build -t backend . 
+```
 
