@@ -277,3 +277,75 @@ kubectl apply -f backend-Deployment.yml
 kubectl apply -f database-Deployment.yml
 ```
 
+Create 3 more files with the names: 
+- frontend-service.yml 
+- backend-service.yml 
+- database-service.yml 
+
+Now copy paste the following codes in those files
+
+frontend-service: 
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+spec:
+  type: NodePort
+  selector:
+    app: frontend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+      nodePort: 3000  # Access frontend at this port on the public IP
+```
+
+backend-service:
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+spec:
+  type: NodePort
+  selector:
+    app: backend
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+      nodePort: 5000  # Access backend at this port on the public IP
+```
+
+database-service.yml: 
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: database-service
+spec:
+  type: ClusterIP
+  selector:
+    app: database
+  ports:
+    - protocol: TCP
+      port: 27017
+      targetPort: 27017
+```
+
+Finally apply the following and deploy the pods on the local kubernetes cluster: 
+```
+kubectl apply -f frontend-service.yml
+kubectl apply -f backend-service.yml
+kubectl apply -f database-service.yml
+```
+
+The frontend and backend will now be accessible 
+Frontend: http://<PUBLIC_IP>:3000
+Backend: http://<PUBLIC_IP>:5000
+<>
+<>
+<>
+<>
+<>
