@@ -342,10 +342,17 @@ kubectl apply -f database-service.yml
 ```
 
 The frontend and backend will now be accessible 
+
 Frontend: http://<PUBLIC_IP>:3000
+
 Backend: http://<PUBLIC_IP>:5000
+
 <>
+
 <>
+
 <>
+
 <>
+
 <>
