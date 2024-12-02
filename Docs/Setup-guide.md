@@ -30,7 +30,8 @@ kubeadm init
 Make sure to run these commands one by one. 
 You can create more instances and add more nodes into the cluster but that is optional. 
 
-## Infrastructure Setup 
+
+## Infrastructure of the project
 ```
 Docker-k8s/
 │
@@ -58,9 +59,54 @@ Docker-k8s/
 └── docker-compose.yaml (optional, for local development)
 ```
 
-The project infrastructure would exactly be like this one. Make 3 directories in the project directory and name them frontend, backend and k8s. In the  frontend directory run this command 
+
+## Frontend Directory and Image
+The project infrastructure would exactly be like this one. Make 3 directories in the project directory and name them frontend, backend and k8s.
+
+In the  frontend directory run this command 
 ```
 git clone https://github.com/Sunloid/Techdome-frontend-fork
 ```
 
-This will clone the frontend repository which I posted. 
+This will clone the frontend repository which I posted. Remove things like the package-lock and readme file. Add a dockerfile and copy paste this code. 
+```
+# Stage 1: Build the React app
+FROM node:16 AS build
+WORKDIR /app
+
+# Copy only package.json and install dependencies
+COPY package.json ./
+RUN npm install
+
+# Copy the rest of the project files and build the app
+COPY . .
+RUN npm run build
+
+# Stage 2: Serve the app using Nginx
+FROM nginx:alpine
+WORKDIR /usr/share/nginx/html
+
+# Remove the default Nginx static assets
+RUN rm -rf ./*
+
+# Copy built React app from the build stage
+COPY --from=build /app/build ./
+
+# Expose the port the app runs on
+EXPOSE 80
+
+# Start Nginx
+CMD ["nginx", "-g", "daemon off;"]
+```
+Then the frontend directory should start looking something like the frontend folder from this repo 
+
+Next build the frontend image 
+```
+docker build -t frontend . 
+```
+
+<>
+
+
+
+
