@@ -13,11 +13,10 @@ I made a few changes in the code after I forked them for my account.
     - SECRET
     - Necessary Credentials for Cloudinary 
 
-2. **Header**: There was a typo in userAction and blogAction files in the frontend repository. 
+2. **Header-ContentType**: There was a typo in userAction and blogAction files in the frontend repository. 
 
-<>
+![Alt text](<image (27).png>)
 
-<>
 
 3. **No space left on disk**: The biggest problem I faced was the space issue. Free instances like the t2.micro was not enough to run the entire application. I had  to switch to t2.large and attach a EBS volume to the instance. 
 

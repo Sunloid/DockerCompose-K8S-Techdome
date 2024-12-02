@@ -102,11 +102,13 @@ Then the frontend directory should start looking something like the frontend fol
 
 Edit the api.js file in the apiConfig of the src folder and use the public ip of the instance. 
 
+![Alt text](<image (28).png>)
+
 Next build the frontend image 
 ```
 docker build -t frontend . 
 ```
-<>
+
 
 
 ## Backend Image and Directory 
