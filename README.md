@@ -7,6 +7,7 @@ This project is a full stack web application consisting of a frontend, backend a
 
 The project leverages Docker Compose for managing multiple services locally and Kubernetes for scalable deployment. This setup allows for the easy development, testing and deployment of the application in a containerized environment, ensuring that all components work seamlessly together. 
 
+
 ## Project Structure
 ```
 DockerCompose-K8S-Techdome/
