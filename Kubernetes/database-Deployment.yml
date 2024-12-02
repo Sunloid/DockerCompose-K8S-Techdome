@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backendcontainer
+          image: backend
+          ports:
+            - containerPort: 5000
+          env:
+            - name: DB
+              value: "mongodb://database:27017/mydatabase4"
