@@ -268,3 +268,12 @@ spec:
           ports:
             - containerPort: 27017
 ```
+<>
+
+Now create pods of the same: 
+```
+kubectl apply -f frontend-Deployment.yml
+kubectl apply -f backend-Deployment.yml
+kubectl apply -f database-Deployment.yml
+```
+
